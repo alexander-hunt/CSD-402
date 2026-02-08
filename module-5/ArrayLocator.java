@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArrayLocator {
 
     // -------- Largest (double) --------
@@ -66,5 +68,36 @@ public class ArrayLocator {
             }
         }
         return location;
+    }
+
+    // -------- Main method (demonstration) --------
+    public static void main(String[] args) {
+
+        int[][] intArray = {
+            {3, 5, 1},
+            {9, 2, 8},
+            {4, 6, 7}
+        };
+
+        double[][] doubleArray = {
+            {2.5, 7.1, 3.3},
+            {9.8, 1.2, 4.6},
+            {5.0, 6.4, 8.9}
+        };
+
+        int[] largestInt = locateLargest(intArray);
+        int[] smallestInt = locateSmallest(intArray);
+        int[] largestDouble = locateLargest(doubleArray);
+        int[] smallestDouble = locateSmallest(doubleArray);
+
+        System.out.println("Int array largest location: " + Arrays.toString(largestInt)
+                + " value = " + intArray[largestInt[0]][largestInt[1]]);
+        System.out.println("Int array smallest location: " + Arrays.toString(smallestInt)
+                + " value = " + intArray[smallestInt[0]][smallestInt[1]]);
+
+        System.out.println("Double array largest location: " + Arrays.toString(largestDouble)
+                + " value = " + doubleArray[largestDouble[0]][largestDouble[1]]);
+        System.out.println("Double array smallest location: " + Arrays.toString(smallestDouble)
+                + " value = " + doubleArray[smallestDouble[0]][smallestDouble[1]]);
     }
 }
